@@ -6,7 +6,7 @@ import { LoginPage } from '../pages/LoginPage';
 
 import { reportSuccess } from '../utils/reportHelper';
 
-test("Login",async({page})=>{
+test("Login with valid credential",async({page})=>{
 
 const home=new HomePage(page);
 
@@ -29,6 +29,93 @@ await reportSuccess(
     "Sign In",
     "Account created successfully",
     "Account Created! successfully displayed"
+);
+
+});
+
+test("Login with unregistered email",async({page})=>{
+
+const home=new HomePage(page);
+
+const login=new LoginPage(page);
+
+await home.openWebsite();
+
+await home.clickLogin();
+
+await login.login("asdqwe34@gmail.com","5465765Qwert/-");
+
+//await expect(page).toHaveURL(/.*login/);
+
+//await expect(page).toHaveTitle(/Automation Exercise/);
+
+await expect(page.locator("text=Your email or password is incorrect!")).toBeVisible();
+
+await reportSuccess(
+    page,
+    "Login with unregitered email",
+    "Alert Your email or password is incorrect! displayed",
+    "Alert Your email or password is incorrect! displayed"
+);
+});
+
+
+test("Login with wrong password",async({page})=>{
+
+const home=new HomePage(page);
+
+const login=new LoginPage(page);
+
+await home.openWebsite();
+
+await home.clickLogin();
+
+await login.login("testingninura@gmail.com","12345678");
+
+//await expect(page).toHaveURL(/.*login/);
+
+//await expect(page).toHaveTitle(/Automation Exercise/);
+
+await expect(page.locator("text=Your email or password is incorrect!")).toBeVisible();
+
+await reportSuccess(
+    page,
+    "Login with wrong password",
+    "Alert Your email or password is incorrect! displayed",
+    "Alert Your email or password is incorrect! displayed"
+);
+
+});
+//belum dari sini
+test("Login with invalid email",async({page})=>{
+
+const home=new HomePage(page);
+
+const login=new LoginPage(page);
+
+await home.openWebsite();
+
+await home.clickLogin();
+
+await login.login("testingninura","5465765Qwert/-");
+
+//await expect(page).toHaveURL(/.*login/);
+
+//await expect(page).toHaveTitle(/Automation Exercise/);
+
+ const email = page.locator("[data-qa='login-email']");
+
+  const validationMessage = await email.evaluate(
+    (el: HTMLInputElement) => el.validationMessage
+  );
+
+  expect(validationMessage).toContain("Please include an '@'");
+
+await reportSuccess(
+    page,
+    "Login with invalid email",
+    "Alert Please include an @ displayed",
+    "Alert Please include an @ displayed"
 );
 
 });
