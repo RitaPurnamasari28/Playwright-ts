@@ -5,6 +5,9 @@ import { HomePage } from '../pages/HomePage';
 import { SignInPage } from '../pages/SignInPage';
 import { reportSuccess } from '../utils/reportHelper';
 
+const random = Math.floor(Math.random() * 1000000);
+const email = `testingninura${random}@gmail.com`;
+
 test("Sign In",async({page})=>{
 
 const home=new HomePage(page);
@@ -15,7 +18,7 @@ await home.openWebsite();
 
 await home.clickLogin();
 
-await signIn.signIn("Ninura","testingninura@gmail.com");
+await signIn.signIn("Ninura",email);
 
 await expect(page.locator("text=Enter Account Information")).toBeVisible();
 

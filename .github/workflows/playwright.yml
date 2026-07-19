@@ -33,7 +33,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Checkout Flow
-        run: npx playwright test tests/e2eFlow.spec.ts
+        run: npx playwright test
 
       - name: Upload Playwright Report
         if: always()

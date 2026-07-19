@@ -33,6 +33,7 @@ async checkboxAccountInfo() {
 }
 
 async info(firstName: string, lastName: string, company: string, address: string, address2: string, state: string ) {
+    await this.page.locator("[id='id_gender2']").click();
     await this.page.locator("[data-qa='first_name']").fill(firstName);
     await this.page.locator("[data-qa='last_name']").fill(lastName);
     await this.page.locator("[data-qa='company']").fill(company);
