@@ -1,31 +1,23 @@
-import { Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
-export class HomePage{
+export class HomePage {
+  constructor(private page: Page) {}
 
-constructor(private page:Page){}
+  async openWebsite() {
+    await this.page.goto("https://automationexercise.com/");
+  }
 
-async openWebsite(){
+  async clickLogin() {
+    await this.page.locator("a[href='/login']").click();
+  }
 
-await this.page.goto("https://automationexercise.com/");
+  async clickLogout() {
+    await this.page.locator("a[href='/logout']").click();
+  }
 
-}
+  async deleteAccount() {
+    await this.page.locator("[data-qa='continue-button']").click();
 
-async clickLogin(){
-
-await this.page.locator("a[href='/login']").click();
-
-}
-
-async clickLogout(){
-
-await this.page.locator("[href='/logout']").click();
-
-}
-
-async deleteAccount(){
-
-await this.page.locator("[href='/delete_account']").click();
-
-}
-
+    await this.page.locator("a[href='/delete_account']").click();
+  }
 }

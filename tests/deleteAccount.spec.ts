@@ -11,7 +11,7 @@ import { reportSuccess } from '../utils/reportHelper';
 const random = Math.floor(Math.random() * 1000000);
 const email = `testingninura${random}@gmail.com`;
 
-test("Logout",async({page})=>{
+test("Delete account",async({page})=>{
 
 const home=new HomePage(page);
 
@@ -46,7 +46,7 @@ await expect(page.locator("text=Account Deleted!")).toBeVisible();
 
 await reportSuccess(
     page,
-    "Sign In",
+    "Delete account",
     "Account deleted successfully",
     "Account Deleted! message successfully displayed"
 );

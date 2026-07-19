@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {"test": "playwright test tests/e2eFlow.spec.ts"},
+  "scripts": {"test": "playwright test"},
   "keywords": [],
   "author": "",
   "license": "ISC",

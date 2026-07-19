@@ -15,6 +15,8 @@ const home=new HomePage(page);
 
 const login=new LoginPage(page);
 
+await home.openWebsite();
+
 await home.clickLogin();
 
 await login.login("testingninura@gmail.com","5465765Qwert/-");
