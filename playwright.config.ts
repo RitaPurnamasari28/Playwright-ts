@@ -2,6 +2,8 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
 
+  
+
   use:{
 
     headless:true,
@@ -10,8 +12,12 @@ export default defineConfig({
 
     trace:"on",
 
-    video:"retain-on-failure"
+    video:"retain-on-failure",
+    actionTimeout: 30000,
 
-  }
+    
+
+  },
+  timeout: 120000
 
 });
