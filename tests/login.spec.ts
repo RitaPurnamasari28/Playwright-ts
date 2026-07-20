@@ -86,7 +86,7 @@ await reportSuccess(
 );
 
 });
-//belum dari sini
+
 test("Login with invalid email",async({page})=>{
 
 const home=new HomePage(page);
@@ -116,6 +116,39 @@ await reportSuccess(
     "Login with invalid email",
     "Alert Please include an @ displayed",
     "Alert Please include an @ displayed"
+);
+
+});
+
+test("Login without input email and password",async({page})=>{
+
+const home=new HomePage(page);
+
+const login=new LoginPage(page);
+
+await home.openWebsite();
+
+await home.clickLogin();
+
+await page.locator("[data-qa='login-button']").click();
+
+//await expect(page).toHaveURL(/.*login/);
+
+//await expect(page).toHaveTitle(/Automation Exercise/);
+
+ const loginEmail = page.locator("[data-qa='login-email']");
+
+  const message = await loginEmail.evaluate((el: HTMLInputElement) => {
+    return el.validationMessage;
+  });
+
+  expect(message).toBe('Please fill out this field.');
+
+await reportSuccess(
+    page,
+    "Login without input email and password",
+    "Message Please fill out this field. displayed",
+    "Message Please fill out this field. displayed"
 );
 
 });
