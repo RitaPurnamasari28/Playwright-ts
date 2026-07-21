@@ -8,15 +8,30 @@ async search(keyword: string) {
     await this.page.locator("#submit_search").click();
 }
 
-async checkoutProduct(message: string, nameOnCard: string, cardNumber: string, cvc: string, expirationMonth: string, expirationYear: string ) {
-    await this.page.locator("[href='/product_details/1']").click();
+
+async addToCart() {
     await this.page.locator("[class='btn btn-default cart']").click();
-    //await this.page.locator("[text='Continue Shopping']").click();
-    //await this.page.locator("[href='/view_cart']").click();
+}
+async viewcart(){
     await this.page.locator("#cartModal a[href='/view_cart']").click();
+}
+
+async continueShopping(){
+    await this.page.locator("#cartModal [class='btn btn-success close-modal btn-block']").click();
+}
+
+async btnProceedToCheckout(){
     await this.page.locator("[class='btn btn-default check_out']").click();
+}
+
+async orderMessage(message: string){
     await this.page.locator("[name='message']").fill(message);
+}
+async placeOrder(){
     await this.page.locator("[href='/payment']").click();
+}
+
+async checkoutProduct(nameOnCard: string, cardNumber: string, cvc: string, expirationMonth: string, expirationYear: string ) {
 
     //Payment Page
     await this.page.locator("[data-qa='name-on-card']").fill(nameOnCard); 
@@ -24,6 +39,9 @@ async checkoutProduct(message: string, nameOnCard: string, cardNumber: string, c
     await this.page.locator("[data-qa='cvc']").fill(cvc);
     await this.page.locator("[data-qa='expiry-month']").fill(expirationMonth);
     await this.page.locator("[data-qa='expiry-year']").fill(expirationYear);
+}
+
+async paybutton() {
     await this.page.locator("[data-qa='pay-button']").click();
 }
 
