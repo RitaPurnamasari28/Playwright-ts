@@ -15,6 +15,8 @@ test("Checkout flow", async ({ page }) => {
 
   await home.openWebsite();
 
+  await page.keyboard.press("Escape");
+
   const login = new LoginPage(page);
 
   await home.clickLogin();
