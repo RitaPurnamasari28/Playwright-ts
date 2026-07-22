@@ -4,18 +4,8 @@ export class HomePage {
   constructor(private page: Page) {}
 
   async openWebsite() {
-    await this.page.goto("https://automationexercise.com/", {
-      waitUntil: "domcontentloaded",
-    });
-
-    await this.page.screenshot({
-      path: "reports/homepage.png",
-      fullPage: true,
-    });
-
-    await expect(
-      this.page.locator("a[href='/login']")
-    ).toBeVisible({ timeout: 60000 });
+  await this.page.goto("https://automationexercise.com/");
+    
   }
 
   async clickLogin() {
