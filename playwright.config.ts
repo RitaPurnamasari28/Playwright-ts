@@ -10,7 +10,7 @@ export default defineConfig({
 
     screenshot:"on",
 
-    trace:"off",
+    trace:"on",
 
     video:"retain-on-failure",
     actionTimeout: 30000,
