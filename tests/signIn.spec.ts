@@ -28,15 +28,10 @@ await signIn.signIn("Ninura",email);
 
 await expect(page.locator("text=Enter Account Information")).toBeVisible();
 
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-//add information page
 await signIn.infoPassword("5465765Qwert/-");
 await signIn.infoDays("22");
 await signIn.infoMonth("5");
 await signIn.infoYear("2005");
-//await page.waitForTimeout(30000);
 await signIn.checkboxAccountInfo();
 await signIn.info("Alexis", "Loh", "UCC", "Manggis Street NO. 45", "Papaya street No 90", "one");
 await signIn.infoCountry("Singapore");
@@ -119,11 +114,6 @@ await signIn.signIn("Ninura",email1);
 
 await expect(page.locator("text=Enter Account Information")).toBeVisible();
 
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-//add information page
-
 await page.locator("[data-qa='create-account']").click();
 
 const password = page.locator("[data-qa='password']");
@@ -154,11 +144,6 @@ await home.openWebsite();
 await home.clickLogin();
 
 await page.locator("[data-qa='signup-button']").click();
-
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-//add information page
 
 const signupName = page.locator("[data-qa='signup-name']");
 
@@ -191,15 +176,10 @@ await signIn.signIn("Ninura",email2);
 
 await expect(page.locator("text=Enter Account Information")).toBeVisible();
 
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-//add information page
 await signIn.infoPassword("5465765Qwert/-");
 await signIn.infoDays("22");
 await signIn.infoMonth("5");
 await signIn.infoYear("2005");
-//await page.waitForTimeout(30000);
 await signIn.checkboxAccountInfo();
 await signIn.info("", "kai", "UCC", "Manggis Street NO. 45", "Papaya street No 90", "one");
 await signIn.infoCountry("Singapore");

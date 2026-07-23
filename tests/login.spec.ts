@@ -18,10 +18,6 @@ await home.clickLogin();
 
 await login.login("testingninura@gmail.com","5465765Qwert/-");
 
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-
 await expect(page.locator("text=Logged in as")).toBeVisible();
 
 await reportSuccess(
@@ -45,10 +41,6 @@ await home.clickLogin();
 
 await login.login("asdqwe34@gmail.com","5465765Qwert/-");
 
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
-
 await expect(page.locator("text=Your email or password is incorrect!")).toBeVisible();
 
 await reportSuccess(
@@ -57,8 +49,8 @@ await reportSuccess(
     "Alert Your email or password is incorrect! displayed",
     "Alert Your email or password is incorrect! displayed"
 );
-});
 
+});
 
 test("Login with wrong password",async({page})=>{
 
@@ -71,10 +63,6 @@ await home.openWebsite();
 await home.clickLogin();
 
 await login.login("testingninura@gmail.com","12345678");
-
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
 
 await expect(page.locator("text=Your email or password is incorrect!")).toBeVisible();
 
@@ -98,10 +86,6 @@ await home.openWebsite();
 await home.clickLogin();
 
 await login.login("testingninura","5465765Qwert/-");
-
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
 
  const email = page.locator("[data-qa='login-email']");
 
@@ -131,10 +115,6 @@ await home.openWebsite();
 await home.clickLogin();
 
 await page.locator("[data-qa='login-button']").click();
-
-//await expect(page).toHaveURL(/.*login/);
-
-//await expect(page).toHaveTitle(/Automation Exercise/);
 
  const loginEmail = page.locator("[data-qa='login-email']");
 

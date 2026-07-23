@@ -27,15 +27,6 @@ test("Checkout flow", async ({ page }) => {
 
   await product.search("Blue Top");
 
-  //await expect(page.locator("text=Blue Top")).toBeVisible();
-
-  await reportSuccess(
-    page,
-    "Search blue top",
-    "Success search product",
-    "Success search for blue top",
-  );
-  //open detail blue top
   await page.locator("[href='/product_details/1']").click();
 
   await product.addToCart();
@@ -184,15 +175,6 @@ test("Checkout without input card number", async ({ page }) => {
 
   await product.search("Blue Top");
 
-  //await expect(page.locator("text=Blue Top")).toBeVisible();
-
-  await reportSuccess(
-    page,
-    "Search blue top",
-    "Success search product",
-    "Success search for blue top",
-  );
-  //open detail blue top
   await page.locator("[href='/product_details/1']").click();
 
   await product.addToCart();
@@ -244,15 +226,6 @@ test("Checkout without input order message", async ({ page }) => {
 
   await product.search("Blue Top");
 
-  //await expect(page.locator("text=Blue Top")).toBeVisible();
-
-  await reportSuccess(
-    page,
-    "Search blue top",
-    "Success search product",
-    "Success search for blue top",
-  );
-  //open detail blue top
   await page.locator("[href='/product_details/1']").click();
 
   await product.addToCart();

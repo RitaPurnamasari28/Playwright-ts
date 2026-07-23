@@ -16,10 +16,6 @@ async viewcart(){
     await this.page.locator("#cartModal a[href='/view_cart']").click();
 }
 
-async continueShopping(){
-    await this.page.locator("#cartModal [class='btn btn-success close-modal btn-block']").click();
-}
-
 async btnProceedToCheckout(){
     await this.page.locator("[class='btn btn-default check_out']").click();
 }
