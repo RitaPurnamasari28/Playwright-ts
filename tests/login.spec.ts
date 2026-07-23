@@ -22,7 +22,7 @@ await expect(page.locator("text=Logged in as")).toBeVisible();
 
 await reportSuccess(
     page,
-    "Sign In",
+    "Login with valid credential",
     "Account created successfully",
     "Account Created! successfully displayed"
 );

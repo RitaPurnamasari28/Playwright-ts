@@ -24,7 +24,7 @@ await expect(page.locator("text= Signup / Login")).toBeVisible();
 
 await reportSuccess(
     page,
-    "Sign In",
+    "Logout",
     "Success logout",
     "Logout Sucessfully"
 );
